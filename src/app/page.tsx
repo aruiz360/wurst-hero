@@ -8,6 +8,7 @@ import Link from "next/link";
 import { renderPaths, renderNextNodes } from "@/utils/map";
 import { getNodeById } from "@/utils/nodes";
 import { renderInteractions } from "@/utils/interactions";
+import { renderLocalizedText } from "@/utils/localizedText";
 
 function createInitialGame(): GameState {
   const currentNode = 1;
@@ -63,8 +64,8 @@ export default function Home() {
           <div className="rounded border border-foreground/10 bg-foreground/5 p-4">
             <h2 className="text-lg font-bold">Navigation</h2>
             Current Node: #{game.currentNode} <br />
-            Node Title: {currentNodeData?.title?.en ?? "Unknown"} <br />
-            Node Description: {currentNodeData?.description?.en ?? "Unknown"} <br />
+            Node Title: {renderLocalizedText(currentNodeData?.title)}
+            Node Description: {renderLocalizedText(currentNodeData?.description)}
             Next possible nodes:{" "}
             {renderNextNodes(game.currentNode, game.map.paths, (nodeId) => {
               setGame((prev) => ({
