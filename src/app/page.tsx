@@ -1,64 +1,84 @@
-import Image from "next/image";
+"use client";
+
+import mapJson from "@/data/map.json";
+import heroJson from "@/data/heros/andy.json";
+
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import { renderPaths, renderNextNodes } from "@/utils/map";
+import { getNodeById } from "@/utils/nodes";
+import { renderInteractions } from "@/utils/interactions";
+
+function createInitialGame(): GameState {
+  const currentNode = 1;
+  const map = mapJson as MapData;
+  const hero = heroJson as Hero;
+
+  return {
+    currentNode,
+    map,
+    hero,
+  };
+}
 
 export default function Home() {
+  const initialGame = useMemo(() => createInitialGame(), []);
+  const [game, setGame] = useState(initialGame);
+  const currentNodeData = useMemo(
+    () => getNodeById(game.currentNode),
+    [game.currentNode]
+  );
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="flex min-h-screen justify-center bg-background text-foreground">
+      <main className="w-full max-w-4xl p-6">
+        <header className="mb-6">
+          <h1 className="text-3xl font-semibold">Wurst Hero</h1>
+          <Link href={"grid"} className="mt-3 inline-block text-sm underline">
+            View grid prototype
+          </Link>
+        </header>
+
+        <section className="grid gap-4 md:grid-cols-2">
+          <div className="rounded border border-foreground/10 bg-foreground/5 p-4">
+            <h2 className="text-lg font-bold">Map</h2>
+            Name: {game.map.name} <br />
+            Start node: {game.map.startNodeId} <br />
+            All Nodes: {game.map.nodeIds?.join(", ")}
+            All paths: {renderPaths(game.map.paths)}
+          </div>
+
+          <div className="rounded border border-foreground/10 bg-foreground/5 p-4">
+            <h2 className="text-lg font-bold">Hero</h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10 text-sm font-semibold">
+                {game.hero.name?.[0]?.toUpperCase() ?? "?"}
+              </div>
+              {game.hero.name} ({game.hero.gender})
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-4 md:grid-cols-1 my-4">
+          <div className="rounded border border-foreground/10 bg-foreground/5 p-4">
+            <h2 className="text-lg font-bold">Navigation</h2>
+            Current Node: #{game.currentNode} <br />
+            Node Title: {currentNodeData?.title?.en ?? "Unknown"} <br />
+            Node Description: {currentNodeData?.description?.en ?? "Unknown"} <br />
+            Next possible nodes:{" "}
+            {renderNextNodes(game.currentNode, game.map.paths, (nodeId) => {
+              setGame((prev) => ({
+                ...prev,
+                currentNode: nodeId,
+              }));
+            })}
+          </div>
+
+          <div className="rounded border border-foreground/10 bg-foreground/5 p-4">
+            <h2 className="text-lg font-bold">Interactions</h2>
+            { renderInteractions(currentNodeData?.interactions) }
+          </div>
+        </section>
       </main>
     </div>
   );

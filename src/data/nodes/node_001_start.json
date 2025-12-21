@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "type": "START",
+  "title": {
+    "en": "Start",
+    "de": "Start"
+  },
+  "description": {
+    "en": "Spawn point. No interactions.",
+    "de": "Startpunkt. Keine Interaktionen."
+  },
+  "interactions": [],
+  "render": {
+    "position": {
+      "x": 0,
+      "y": 0
+    }
+  }
+}

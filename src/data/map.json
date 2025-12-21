@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "name": "Demo Map",
+  "startNodeId": 1,
+  "nodeIds": [1, 2, 3],
+  "paths": [
+    { "from": 1, "to": 2 },
+    { "from": 2, "to": 3}
+  ]
+}

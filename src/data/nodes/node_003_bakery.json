@@ -1,0 +1,213 @@
+{
+  "id": 3,
+  "type": "SITUATION",
+  "title": {
+    "en": "The Bakery",
+    "de": "Die Bäckerei"
+  },
+  "description": {
+    "en": "Buying bread and pastries in a German bakery.",
+    "de": "Brot und Gebäck in einer deutschen Bäckerei kaufen."
+  },
+  "interactions": [
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "You enter a small bakery. It smells like fresh bread.",
+          "de": "Du betrittst eine kleine Bäckerei. Es riecht nach frischem Brot."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Hello.",
+          "de": "Hallo."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Hello.",
+              "de": "Hallo."
+            },
+            "explanation": {
+              "en": "Neutral greeting, common in shops.",
+              "de": "Neutrale Begrüßung, üblich im Laden."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Good morning.",
+          "de": "Guten Morgen."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Good morning.",
+              "de": "Guten Morgen."
+            },
+            "explanation": {
+              "en": "Polite, time-specific greeting.",
+              "de": "Höfliche, zeitabhängige Begrüßung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "You look at the display and decide what to order.",
+          "de": "Du schaust in die Auslage und entscheidest, was du bestellen möchtest."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "One bread roll, please.",
+          "de": "Ein Brötchen, bitte."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Here you go.",
+              "de": "Bitte schön."
+            },
+            "explanation": {
+              "en": "'Here you go' when handing something over.",
+              "de": "„Bitte schön“ beim Überreichen von etwas."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "I would like one bread roll, please.",
+          "de": "Ich hätte gern ein Brötchen, bitte."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Of course.",
+              "de": "Gerne."
+            },
+            "explanation": {
+              "en": "'Gerne' used to express willingness.",
+              "de": "„Gerne“ drückt Bereitschaft aus."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "And one croissant, please.",
+          "de": "Und ein Croissant, bitte."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Anything else?",
+              "de": "Sonst noch etwas?"
+            },
+            "explanation": {
+              "en": "Common shop question; elliptical form.",
+              "de": "Typische Ladenfrage; verkürzte Form."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "I will also take a croissant.",
+          "de": "Ich nehme auch ein Croissant."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Sure.",
+              "de": "Alles klar."
+            },
+            "explanation": {
+              "en": "Colloquial confirmation.",
+              "de": "Umgangssprachliche Bestätigung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "The cashier tells you the price.",
+          "de": "Die Verkäuferin sagt dir den Preis."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Thank you.",
+          "de": "Danke."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "You're welcome.",
+              "de": "Bitte."
+            },
+            "explanation": {
+              "en": "Standard reply to thanks.",
+              "de": "Standardantwort auf Dank."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Thank you very much. Have a nice day.",
+          "de": "Vielen Dank. Einen schönen Tag noch."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "You too!",
+              "de": "Ihnen auch!"
+            },
+            "explanation": {
+              "en": "Dative formal 'you' in fixed phrase.",
+              "de": "Dativisches formelles „Sie“ in fester Wendung."
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "render": {
+    "position": {
+      "x": 3,
+      "y": 0
+    }
+  }
+}

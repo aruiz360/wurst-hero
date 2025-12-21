@@ -1,0 +1,297 @@
+{
+  "id": 2,
+  "type": "SITUATION",
+  "title": {
+    "en": "The Bus",
+    "de": "Der Bus"
+  },
+  "description": {
+    "en": "End-to-end bus interaction from waiting to getting off.",
+    "de": "Eine komplette Bus-Situation vom Warten bis zum Aussteigen."
+  },
+  "interactions": [
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "You are waiting at a bus stop. A bus arrives.",
+          "de": "Du wartest an einer Bushaltestelle. Ein Bus kommt an."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Is this bus number five?",
+          "de": "Ist das der Bus Nummer fünf?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Yes, it is.",
+              "de": "Ja, das ist er."
+            },
+            "explanation": {
+              "en": "The pronoun 'er' refers to 'der Bus' (masculine).",
+              "de": "Das Pronomen „er“ bezieht sich auf „der Bus“ (maskulin)."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Excuse me, is this bus number five?",
+          "de": "Entschuldigung, ist das der Bus Nummer fünf?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Yes, exactly.",
+              "de": "Ja, genau."
+            },
+            "explanation": {
+              "en": "'Exactly' is used as confirmation.",
+              "de": "„Genau“ wird als Bestätigung verwendet."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Thanks!",
+          "de": "Danke!"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "You're welcome.",
+              "de": "Bitte."
+            },
+            "explanation": {
+              "en": "'Bitte' is the standard reply to thanks.",
+              "de": "„Bitte“ ist die Standardantwort auf Dank."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "You enter the bus and approach the driver.",
+          "de": "Du steigst in den Bus ein und gehst zum Fahrer."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Hello.",
+          "de": "Hallo."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Hello.",
+              "de": "Hallo."
+            },
+            "explanation": {
+              "en": "Neutral informal greeting.",
+              "de": "Neutrale, informelle Begrüßung."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Good morning.",
+          "de": "Guten Morgen."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Good morning.",
+              "de": "Guten Morgen."
+            },
+            "explanation": {
+              "en": "Formal, time-specific greeting.",
+              "de": "Formelle, zeitabhängige Begrüßung."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "You look for a seat. The bus is crowded.",
+          "de": "Du suchst einen Sitzplatz. Der Bus ist voll."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Is this seat free?",
+          "de": "Ist hier frei?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Yes.",
+              "de": "Ja."
+            },
+            "explanation": {
+              "en":"'Free' is a predicate adjective.",
+              "de": "„Frei“ ist ein prädikatives Adjektiv."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Excuse me, may I sit here?",
+          "de": "Entschuldigung, darf ich hier sitzen?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Yes, please.",
+              "de": "Ja, bitte."
+            },
+            "explanation": {
+              "en":"'Please' softens the permission.",
+              "de": "„Bitte“ macht die Erlaubnis höflicher."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "An elderly person enters the bus.",
+          "de": "Eine ältere Person steigt in den Bus ein."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Would you like to sit?",
+          "de": "Möchten Sie sitzen?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Oh, thank you!",
+              "de": "Oh, danke!"
+            },
+            "explanation": {
+              "en": "Polite gratitude with emotional emphasis.",
+              "de": "Höflicher Dank mit emotionaler Betonung."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Please, take my seat.",
+          "de": "Bitte, nehmen Sie meinen Platz."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Thank you very much, that's very kind.",
+              "de": "Vielen Dank, das ist sehr nett."
+            },
+            "explanation": {
+              "en": "Predicate adjective with intensifier.",
+              "de": "Prädikatives Adjektiv mit Verstärker."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "context",
+      "character": null,
+      "level_1": {
+        "action": {
+          "en": "Your stop is coming up.",
+          "de": "Deine Haltestelle kommt gleich."
+        },
+        "possible_reactions": []
+      }
+    },
+    {
+      "type": "character",
+      "character": "hero",
+      "level_1": {
+        "action": {
+          "en": "Excuse me, I need to get out.",
+          "de": "Entschuldigung, ich muss raus."
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Sure.",
+              "de": "Ja, klar."
+            },
+            "explanation": {
+              "en": "Colloquial affirmative.",
+              "de": "Umgangssprachliche Zustimmung."
+            }
+          }
+        ]
+      },
+      "level_2": {
+        "action": {
+          "en": "Could you please let me out?",
+          "de": "Könnten Sie mich bitte rauslassen?"
+        },
+        "possible_reactions": [
+          {
+            "text": {
+              "en": "Of course.",
+              "de": "Natürlich."
+            },
+            "explanation": {
+              "en": "Polite acceptance.",
+              "de": "Höfliche Zustimmung."
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "render": {
+    "position": {
+      "x": 0,
+      "y": 1
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mapId": 1,
+  "heroId": 1,
+  "currentNodeId": 0,
+  "difficulty": "A1",
+  "progress": {
+    "level": 1,
+    "visitedNodeIds": [0],
+    "completedNodeIds": [],
+    "unlockedNodeIds": [0, 1],
+    "inventoryVocabIds": []
+  }
+}
