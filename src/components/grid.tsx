@@ -20,7 +20,7 @@ export default function Grid() {
       0.1,
       1000
     );
-    camera.position.set(0, 10, 20);
+    camera.position.set(0, 40, 80);
     camera.lookAt(0, 0, 0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -71,21 +71,21 @@ export default function Grid() {
 
     const mat = new THREE.PointsMaterial({
       color: 0xffffff,
-      size: 0.9, // world units
+      size: 1, // world units
       sizeAttenuation: true,
     });
 
     const dots = new THREE.Points(geom, mat);
     scene.add(dots);
 
-    const cylinderGeom = new THREE.CylinderGeometry(1, 1, 2, 32);
+    const cylinderGeom = new THREE.CylinderGeometry(1, 2, 2, 10);
     const cylinderMat = new THREE.MeshStandardMaterial({
       color: 0xff0000,
       metalness: 0.9,
       roughness: 0.2,
     });
     const cylinder = new THREE.Mesh(cylinderGeom, cylinderMat);
-    cylinder.position.set(0, 1, 0); // center on origin and sit on the grid
+    cylinder.position.set(0, 1, 50); // center on origin and sit on the grid
     scene.add(cylinder);
 
     const raycaster = new THREE.Raycaster();

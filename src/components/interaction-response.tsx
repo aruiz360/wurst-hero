@@ -56,13 +56,13 @@ export default function InteractionResponse({
     }
 
     if (bestLevelTwo >= 0.8) {
-      setScore(100);
+      setScore(bestLevelTwo);
       setFeedback("Great! Very close to level 2.");
     } else if (bestLevelOne >= 0.5) {
-      setScore(50);
+      setScore(bestLevelOne);
       setFeedback("Good! Close to level 1.");
     } else {
-      setScore(0);
+      setScore(bestLevelOne);
       setFeedback("Needs work. Try aligning more closely with the expected responses.");
     }
   };
